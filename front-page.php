@@ -1,6 +1,6 @@
 <?php
 
-get_header();
+get_header('frontpage');
 
 ?>
 <div id="scrolling-topics">
@@ -15,8 +15,21 @@ get_header();
                 <div class="name-backimage"></div>
             </div>
         </div>
+        <div id="navigation-header">
+            <nav>
+                <ul>
+                    <li><a href="#introduction-container"><h2><?= get_theme_mod('waptheme_options-intro_title'); ?></h2></a></li>
+                    <li><a href="#goalsSkills-container"><h2><?= get_theme_mod('waptheme_options-goals_title'); ?></h2></a></li>
+                    <li><a href="#resume-container"><h2><?= get_theme_mod('waptheme_options-resume_title'); ?></h2></a></li>
+                    <li><a href="#caseStudies-container"><h2><?= get_theme_mod('waptheme_options-caseStudies_title'); ?></h2></a></li>
+                    <li><a href="#articles-container"><h2><?= get_theme_mod('waptheme_options-articles_title'); ?></h2></a></li>
+                    <li><a href="#about-container"><h2><?= get_theme_mod('waptheme_options-about_title'); ?></h2></a></li>
+                    <li><a href="#elsewhere-container"><h2><?= get_theme_mod('waptheme_options-elsewhere_title'); ?></h2></a></li>
+                </ul>
+            </nav>
+        </div>
     </div>
-    <div id="navigation">
+    <div id="navigation-sticky">
         <nav class="nav-top">
             <ul>
                 <li><a href="#introduction-container"><h2><?= get_theme_mod('waptheme_options-intro_title'); ?></h2></a></li>
@@ -31,16 +44,20 @@ get_header();
     </div>
     <div id="body-topics">
         <div id="introduction-container" class="topic-container">
-            <div class="section-header">
-                <h2><?= get_theme_mod('waptheme_options-intro_title'); ?></h2>
-            </div>
+            <a href="#main">
+                <div class="section-header">
+                    <h2><?= get_theme_mod('waptheme_options-intro_title'); ?></h2>
+                </div>
+            </a>
             <div class="page-line"></div>
             <p><?= get_theme_mod('waptheme_options-intro_text'); ?></p>
         </div>
         <div id="goalsSkills-container" class="topic-container">
-            <div class="section-header">
-                <h2><?= get_theme_mod('waptheme_options-goals_title'); ?></h2>
-            </div>
+            <a href="#main">
+                <div class="section-header">
+                    <h2><?= get_theme_mod('waptheme_options-goals_title'); ?></h2>
+                </div>
+            </a>
             <div class="page-line"></div>
             <p><?= get_theme_mod('waptheme_options-goals_text'); ?></p>
             <div class="goals-skills-container">
@@ -64,15 +81,17 @@ get_header();
             </div>
         </div>
         <div id="resume-container" class="topic-container">
-            <div class="section-header">
-                <h2><?= get_theme_mod('waptheme_options-resume_title'); ?></h2>
-            </div>
+            <a href="#main">
+                <div class="section-header">
+                    <h2><?= get_theme_mod('waptheme_options-resume_title'); ?></h2>
+                </div>
+            </a>
             <div class="page-line"></div>
             <p><?= get_theme_mod('waptheme_options-resume_text'); ?></p>
             <div id="expAndEdTimeline">
                 <div id="education-bubbles" class="timeline-bubbles-container">
                     <div class="timeline-header">
-                        <h3><?= get_theme_mod('wpatheme_options-ed_title'); ?></h3>
+                        <h3><?= get_theme_mod('waptheme_options-ed_title'); ?></h3>
                     </div>
                     <div class="timeline-bubble">
                         <h4><?= get_theme_mod('waptheme_options-edbubble1_title'); ?></h4>
@@ -105,9 +124,11 @@ get_header();
                 
         </div>
         <div id="caseStudies-container" class="topic-container">
-            <div class="section-header">
-                <h2><?= get_theme_mod('waptheme_options-caseStudies_title'); ?></h2>
-            </div>
+            <a href="#main">
+                <div class="section-header">
+                    <h2><?= get_theme_mod('waptheme_options-caseStudies_title'); ?></h2>
+                </div>
+            </a>
             <div class="page-line"></div>
             <div class="caseStudies-thumbnail-container">
             <!-- Case Studies Query -->
@@ -142,15 +163,18 @@ get_header();
             ?>
             </div>
             <div class="archive-link-container">
-                <button class="archive-link"><?= get_theme_mod('waptheme_options-caseStudies_more'); ?></button>
+                <p><?= get_category_link( get_cat_ID('Case Study')); ?></p>
+                <a href="<?= get_category_link( get_cat_ID('Case Study')) ?>" class="archive-link"><?= get_theme_mod('waptheme_options-caseStudies_more'); ?></a>
             </div>
 
 
         </div>
         <div id="articles-container" class="topic-container">
-            <div class="section-header">
-                <h2><?= get_theme_mod('waptheme_options-articles_title'); ?></h2>
-            </div>
+            <a href="#main">
+                <div class="section-header">
+                    <h2><?= get_theme_mod('waptheme_options-articles_title'); ?></h2>
+                </div>
+            </a>
             <div class="page-line"></div>
             <div class="entry-thumbnails-container">
             <!-- Articles Custom Query -->
@@ -205,9 +229,11 @@ get_header();
     </div>
 </div>
 <div id="about-container" class="topic-container">
-    <div class="header-container">
-        <h3><?= get_theme_mod('waptheme_options-about_title'); ?></h3>
-    </div>
+    <a href="#main">    
+        <div class="header-container">
+            <h3><?= get_theme_mod('waptheme_options-about_title'); ?></h3>
+        </div>
+    </a>
     <div class="about-entry-container">
         <div id="about-image" style="background-image: url(<?= esc_url(get_theme_mod('waptheme_options-about_image'));?>"></div>
         <div id="about-entry">
@@ -218,37 +244,37 @@ get_header();
 <div id="elsewhere-container" class="topic-container">
     <div id="social-link-container">
         <div class="social-link">
-            <a href="<?= esc_url(get_theme_mod('waptheme_options-twitter_url')); ?>">
+            <a href="<?= esc_url(get_theme_mod('waptheme_options-twitter_url')); ?>" target="_blank">
                 <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/wapIconTwitter.png">
                 <p><?= get_theme_mod('waptheme_options-twitter_text'); ?></p>
             </a>
         </div>
         <div class="social-link">
-            <a href="<?= esc_url(get_theme_mod('waptheme_options-github_url')); ?>">
+            <a href="<?= esc_url(get_theme_mod('waptheme_options-github_url')); ?>" target="_blank">
                 <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/wapIconGitHub.png">
                 <p><?= get_theme_mod('waptheme_options-github_text'); ?></p>
             </a>
         </div>
         <div class="social-link">
-            <a href="<?= esc_url(get_theme_mod('waptheme_options-instagram_url')); ?>">
+            <a href="<?= esc_url(get_theme_mod('waptheme_options-instagram_url')); ?>" target="_blank">
                 <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/wapIconInstagram.png">
                 <p><?= get_theme_mod('waptheme_options-instagram_text'); ?></p>
             </a>
         </div>
         <div class="social-link">
-            <a href="<?= esc_url(get_theme_mod('waptheme_options-linkedin_url')); ?>">
+            <a href="<?= esc_url(get_theme_mod('waptheme_options-linkedin_url')); ?>" target="_blank">
                 <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/wapIconLinkedIn.png">
                 <p><?= get_theme_mod('waptheme_options-linkedin_text'); ?></p>
             </a>
         </div>
         <div class="social-link">
-            <a href="<?= esc_url(get_theme_mod('waptheme_options-so_url')); ?>">
+            <a href="<?= esc_url(get_theme_mod('waptheme_options-so_url')); ?>" target="_blank">
                 <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/wapIconStackOverflow.png">
                 <p><?= get_theme_mod('waptheme_options-so_text'); ?></p>
             </a>
         </div>
         <div class="social-link">
-            <a href="<?= esc_url(get_theme_mod('waptheme_options-ps_url')); ?>">
+            <a href="<?= esc_url(get_theme_mod('waptheme_options-ps_url')); ?>" target="_blank">
                 <img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/wapIconPluralSight.png">
                 <p><?= get_theme_mod('waptheme_options-ps_text'); ?></p>
             </a>

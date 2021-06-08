@@ -6,9 +6,13 @@ add_theme_support('post-thumbnails', array(
     'page',
 ));
 
+// Admin Bar
+add_theme_support( 'admin-bar', array( 'callback' => '__return_false' ) );
+
 add_action( 'wp_enqueue_scripts', 'waptheme_scripts' );
 function waptheme_scripts() {
     wp_enqueue_style( 'waptheme-style', get_stylesheet_directory_uri() . '/style.css' );
+    wp_enqueue_script( 'waptheme-script', get_stylesheet_directory_uri() . '/assets/js/functions.js', array(), '1.0.0', true );
 }
 
 add_action('customize_register', 'waptheme_customize_register' );

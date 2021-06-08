@@ -71,7 +71,6 @@ button {
     height: 100vh;
     position: relative;
     top: 0;
-    background-image: url(media/TahoeHike002.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -135,7 +134,119 @@ button {
 
 }
 
-#navigation {
+#navigation-header {
+
+    @media only screen and (max-width: 991px) {
+        display: none;
+    }
+
+    width:20%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+
+    nav {
+        width: 1200px;
+        position: absolute;
+        bottom: 10%;
+        right: 0;
+        transition: right 1s ease-out;
+
+        ul {
+            width: 100%;
+            position: relative;
+            padding: 0;
+            margin: 0;
+
+            li {
+                width: 100%;
+                position: relative;
+                right: 0;
+                padding-right: 12px;
+                margin: 0;
+                transform: skewX(-30deg);
+                background: $orange;
+                list-style-type: none;
+                text-align: right;
+                transition: right 0.3s ease-out;
+        
+                a {
+                    text-decoration: none;
+                }
+        
+                h2 {
+                    color: black;
+                    transform: skewX(30deg);
+                    margin: 10px 0;
+                }
+        
+                &:nth-of-type(1) {
+                    right: -200px;            
+                    &:hover {
+                        right: -224px;
+                    }
+        
+                    @media only screen and (min-width: 992px) {
+                        display: none;
+                    }
+                }
+        
+                &:nth-of-type(2) {
+                    right: -174px;
+        
+                    &:hover {
+                        right: -198px;
+                    }
+                }
+        
+                &:nth-of-type(3) {
+                    right: -150px;
+        
+                    &:hover {
+                        right: -174px;
+                    }
+                }
+        
+                &:nth-of-type(4) {
+                    right: -126px;
+        
+                    &:hover {
+                        right: -150px;
+                    }
+                }
+        
+                &:nth-of-type(5) {
+                    right: -102px;
+        
+                    &:hover {
+                        right: -126px;
+                    }
+                }
+        
+                &:nth-of-type(6) {
+                    right: -78px;
+        
+                    &:hover {
+                        right: -102px;
+                    }
+                }
+        
+                &:nth-of-type(7) {
+                    right: -54px;
+        
+                    &:hover {
+                        right: -78px;
+                    }
+                }
+            }
+        }
+    }
+
+    
+}
+
+#navigation-sticky {
     width: 160px;
     height: 100vh;
     position: absolute;
@@ -147,14 +258,14 @@ button {
         position: sticky;
     }
 
-    @media only screen and (min-width: 1024px) {
-        position: absolute;
+    @media only screen and (min-width: 992px) {
+        display: none;
     }
 
     nav {
         width: 1200px;
         position: absolute;
-        bottom: 0;
+        bottom: 10%;
         right: 0;
         transition: right 1s ease-out;
 
@@ -164,7 +275,7 @@ button {
 
         }
 
-        @media only screen and (min-width: 576px) and (max-width: 1023px) {
+        @media only screen and (min-width: 576px) {
             &.nav-scrolling {
 
                 li {
@@ -210,7 +321,11 @@ button {
         &:nth-of-type(1) {
             right: -200px;            
             &:hover {
-                right: -24px;
+                right: -224px;
+            }
+
+            @media only screen and (min-width: 992px) {
+                display: none;
             }
         }
 
@@ -218,7 +333,7 @@ button {
             right: -174px;
 
             &:hover {
-                right: 0;
+                right: -198px;
             }
         }
 
@@ -226,7 +341,7 @@ button {
             right: -150px;
 
             &:hover {
-                right: 24px;
+                right: -174px;
             }
         }
 
@@ -234,7 +349,7 @@ button {
             right: -126px;
 
             &:hover {
-                right: 48px;
+                right: -150px;
             }
         }
 
@@ -242,7 +357,7 @@ button {
             right: -102px;
 
             &:hover {
-                right: 72px;
+                right: -126px;
             }
         }
 
@@ -250,7 +365,7 @@ button {
             right: -78px;
 
             &:hover {
-                right: 96px;
+                right: -102px;
             }
         }
 
@@ -258,7 +373,7 @@ button {
             right: -54px;
 
             &:hover {
-                right: 120px;
+                right: -78px;
             }
         }
 
@@ -271,9 +386,6 @@ button {
         }
     }
 }
-
-
-
 
 #body-topics {
 
@@ -293,8 +405,8 @@ button {
         box-sizing: border-box;
         position: relative;
 
-        @media only screen and (min-width: 576px) {
-            padding-left: 200px;
+        @media only screen and (min-width: 576px) and (max-width: 991px) {
+            padding-left: 224px;
             padding-right: 5%;
         }
 
@@ -303,10 +415,14 @@ button {
             padding-right: 12px;
             position: absolute;
             top: 40px;
-            right: 25%;
+            left: 56px;
             background: $orange;
             text-align: right;
             transform: skewX(-30deg);
+
+            @media only screen and (min-width: 576px) and (max-width: 991px) {
+                left: 240px;
+            }
 
             h2 {
                 margin: 0;
@@ -331,6 +447,10 @@ button {
             top: calc(120px + 1.25rem / 2);
             left: 0;
             background: $orange;
+
+            @media only screen and (min-width: 576px) and (max-width: 991px) {
+                width: 220px;
+            }
         }
 
         p {
@@ -351,7 +471,7 @@ button {
 
 
 
-        @media only screen and (min-width: 992px) {
+        @media only screen and (min-width: 1400px) {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
@@ -359,7 +479,7 @@ button {
 
         .goals-bubbles-container {
 
-            @media only screen and (min-width: 992px) {
+            @media only screen and (min-width: 1400px) {
                 width: 48%;
                 display: flex;
                 flex-direction: column;
@@ -386,7 +506,7 @@ button {
         .skills-container {
             
 
-            @media only screen and (min-width: 992px) {
+            @media only screen and (min-width: 1400px) {
                 width: 50%;
             }
 
@@ -394,6 +514,7 @@ button {
                 width: 100%;
                 max-width: 340px;
                 max-height: 100%;
+                margin-top: 8px;
                 vertical-align: bottom;
                 border-radius: 10px;
             }
@@ -478,11 +599,7 @@ button {
     display: flex;
     flex-direction: column;
 
-    .page-line {
-        position: relative;
-        top: 9%;
-        left: -40px;
-    }
+
 
     .caseStudies-thumbnail-container {
         width: 100%;
@@ -518,9 +635,12 @@ button {
                 background: black;
                 text-align: right;
 
+                @media only screen and (min-width: 768px) {
+                    right: 40%;
+                }
+
                 @media only screen and (min-width: 992px) {
-                    right: auto;
-                    left: -67.5%;
+                    
                 }
 
                 h3 {
@@ -693,31 +813,44 @@ button {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+
+    @media only screen and (min-width: 768px) {
+        padding: 80px 15%;
+    }
+
+    a {
+        text-decoration: none;
+    }
 
     .header-container {
         width: 100%;
-        flex-grow: 0;
         text-align: center;
 
         h3 {
             margin: 0 0 12px 0;
             font-size: 2rem;
+            color: black;
         }
     }
 
     .about-entry-container {
         width: 100%;
-        flex-grow: 1;
 
         #about-image {
             width: 40%;
             height: 40%;
             margin: 0 8px 8px 0;
             float: left;
-            background: url(media/Headshot001.png);
             background-size: cover;
-            background-position: right;
+            background-position: center;
             background-repeat: no-repeat;
+
+            @media only screen and (min-width: 576px) {
+                width: 240px;
+                height: 320px;
+                margin-right: 20px;
+            }
         }
 
         #about-entry {
@@ -728,8 +861,12 @@ button {
                     margin-top: 0;
                 }
 
-                @media only screen and (min-width: 992px) {
+                @media only screen and (min-width: 576px) {
                     margin: 0;
+                    font-size: 1.2rem;
+                }
+
+                @media only screen and (min-width: 992px) {
                     font-size: 1.5rem;
                 }
             }
@@ -739,6 +876,7 @@ button {
 
 #elsewhere-container {
     width: 100%;
+    min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -748,6 +886,7 @@ button {
     
     @media only screen and (min-width: 992px){
         height: 50vh;
+        min-height: 0;
         display: flex;
         flex-direction: row;
     }
@@ -841,6 +980,11 @@ button {
 
                     &:first-of-type {
                         margin-bottom: 8px;
+
+                        @media only screen and (min-width: 992px) {
+                            margin-bottom: 0;
+                            margin-right: 8px;
+                        }
                     }
                 }
 
@@ -931,8 +1075,8 @@ footer {
 }
 
 //Non-front page header styles
-body.reading-page,
-body.archive-page {
+body.single,
+body.archive {
     header {
         width: 100%;
         background: black;
@@ -956,7 +1100,7 @@ body.archive-page {
 
 //Reading Page Styles
 
-body.reading-page {
+body.single {
     header {
         width: 100%;
         background: black;
@@ -985,7 +1129,6 @@ body.reading-page {
             width: 100%;
             height: 27.5vh;
             position: relative;
-            background: url(../Assets/images/photo-of-black-motorcycle-parked-on-pavement-2396109-Photo-by-Sourav-Mishra-from-Pexels.jpg);
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -1037,7 +1180,7 @@ body.reading-page {
 }
 
 //Archive Page Styles
-body.archive-page {
+body.archive {
 
 
     #archive-thumbnails {

@@ -6,11 +6,10 @@ function ready(callbackFunction){
     }
 }
 ready(e => {
-    let nav = document.getElementById("navigation").getElementsByTagName("nav")[0];
+    let nav = document.getElementById("navigation-sticky").getElementsByTagName("nav")[0];
     let scrollingElement = document.getElementsByTagName('body')[0];
 
     function navLocation(){
-        console.log(scrollingElement.scrollTop);
         if (scrollingElement.scrollTop > 0) {
             nav.setAttribute('class','nav-scrolling');
         } else {

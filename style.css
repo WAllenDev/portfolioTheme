@@ -55,7 +55,6 @@ button {
   height: 100vh;
   position: relative;
   top: 0;
-  background-image: url(media/TahoeHike002.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -113,46 +112,32 @@ button {
   align-self: flex-end;
 }
 
-#navigation {
-  width: 160px;
+#navigation-header {
+  width: 20%;
   height: 100vh;
   position: absolute;
   top: 0;
   z-index: 20;
 }
-@media only screen and (min-width: 576px) {
-  #navigation {
-    position: -webkit-sticky;
-    position: sticky;
+@media only screen and (max-width: 991px) {
+  #navigation-header {
+    display: none;
   }
 }
-@media only screen and (min-width: 1024px) {
-  #navigation {
-    position: absolute;
-  }
-}
-#navigation nav {
+#navigation-header nav {
   width: 1200px;
   position: absolute;
-  bottom: 0;
+  bottom: 10%;
   right: 0;
   transition: right 1s ease-out;
 }
-@media only screen and (min-width: 576px) and (max-width: 1023px) {
-  #navigation nav.nav-scrolling li {
-    right: 0;
-  }
-  #navigation nav.nav-scrolling li:hover {
-    right: -38px;
-  }
-}
-#navigation ul {
+#navigation-header nav ul {
   width: 100%;
   position: relative;
   padding: 0;
   margin: 0;
 }
-#navigation li {
+#navigation-header nav ul li {
   width: 100%;
   position: relative;
   right: 0;
@@ -164,55 +149,167 @@ button {
   text-align: right;
   transition: right 0.3s ease-out;
 }
-#navigation li a {
+#navigation-header nav ul li a {
   text-decoration: none;
 }
-#navigation li h2 {
+#navigation-header nav ul li h2 {
   color: black;
   transform: skewX(30deg);
   margin: 10px 0;
 }
-#navigation li:nth-of-type(1) {
+#navigation-header nav ul li:nth-of-type(1) {
   right: -200px;
 }
-#navigation li:nth-of-type(1):hover {
-  right: -24px;
+#navigation-header nav ul li:nth-of-type(1):hover {
+  right: -224px;
 }
-#navigation li:nth-of-type(2) {
+@media only screen and (min-width: 992px) {
+  #navigation-header nav ul li:nth-of-type(1) {
+    display: none;
+  }
+}
+#navigation-header nav ul li:nth-of-type(2) {
   right: -174px;
 }
-#navigation li:nth-of-type(2):hover {
-  right: 0;
+#navigation-header nav ul li:nth-of-type(2):hover {
+  right: -198px;
 }
-#navigation li:nth-of-type(3) {
+#navigation-header nav ul li:nth-of-type(3) {
   right: -150px;
 }
-#navigation li:nth-of-type(3):hover {
-  right: 24px;
+#navigation-header nav ul li:nth-of-type(3):hover {
+  right: -174px;
 }
-#navigation li:nth-of-type(4) {
+#navigation-header nav ul li:nth-of-type(4) {
   right: -126px;
 }
-#navigation li:nth-of-type(4):hover {
-  right: 48px;
+#navigation-header nav ul li:nth-of-type(4):hover {
+  right: -150px;
 }
-#navigation li:nth-of-type(5) {
+#navigation-header nav ul li:nth-of-type(5) {
   right: -102px;
 }
-#navigation li:nth-of-type(5):hover {
-  right: 72px;
+#navigation-header nav ul li:nth-of-type(5):hover {
+  right: -126px;
 }
-#navigation li:nth-of-type(6) {
+#navigation-header nav ul li:nth-of-type(6) {
   right: -78px;
 }
-#navigation li:nth-of-type(6):hover {
-  right: 96px;
+#navigation-header nav ul li:nth-of-type(6):hover {
+  right: -102px;
 }
-#navigation li:nth-of-type(7) {
+#navigation-header nav ul li:nth-of-type(7) {
   right: -54px;
 }
-#navigation li:nth-of-type(7):hover {
-  right: 120px;
+#navigation-header nav ul li:nth-of-type(7):hover {
+  right: -78px;
+}
+
+#navigation-sticky {
+  width: 160px;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  z-index: 20;
+}
+@media only screen and (min-width: 576px) {
+  #navigation-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #navigation-sticky {
+    display: none;
+  }
+}
+#navigation-sticky nav {
+  width: 1200px;
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  transition: right 1s ease-out;
+}
+@media only screen and (min-width: 576px) {
+  #navigation-sticky nav.nav-scrolling li {
+    right: 0;
+  }
+  #navigation-sticky nav.nav-scrolling li:hover {
+    right: -38px;
+  }
+}
+#navigation-sticky ul {
+  width: 100%;
+  position: relative;
+  padding: 0;
+  margin: 0;
+}
+#navigation-sticky li {
+  width: 100%;
+  position: relative;
+  right: 0;
+  padding-right: 12px;
+  margin: 0;
+  transform: skewX(-30deg);
+  background: #f49f0a;
+  list-style-type: none;
+  text-align: right;
+  transition: right 0.3s ease-out;
+}
+#navigation-sticky li a {
+  text-decoration: none;
+}
+#navigation-sticky li h2 {
+  color: black;
+  transform: skewX(30deg);
+  margin: 10px 0;
+}
+#navigation-sticky li:nth-of-type(1) {
+  right: -200px;
+}
+#navigation-sticky li:nth-of-type(1):hover {
+  right: -224px;
+}
+@media only screen and (min-width: 992px) {
+  #navigation-sticky li:nth-of-type(1) {
+    display: none;
+  }
+}
+#navigation-sticky li:nth-of-type(2) {
+  right: -174px;
+}
+#navigation-sticky li:nth-of-type(2):hover {
+  right: -198px;
+}
+#navigation-sticky li:nth-of-type(3) {
+  right: -150px;
+}
+#navigation-sticky li:nth-of-type(3):hover {
+  right: -174px;
+}
+#navigation-sticky li:nth-of-type(4) {
+  right: -126px;
+}
+#navigation-sticky li:nth-of-type(4):hover {
+  right: -150px;
+}
+#navigation-sticky li:nth-of-type(5) {
+  right: -102px;
+}
+#navigation-sticky li:nth-of-type(5):hover {
+  right: -126px;
+}
+#navigation-sticky li:nth-of-type(6) {
+  right: -78px;
+}
+#navigation-sticky li:nth-of-type(6):hover {
+  right: -102px;
+}
+#navigation-sticky li:nth-of-type(7) {
+  right: -54px;
+}
+#navigation-sticky li:nth-of-type(7):hover {
+  right: -78px;
 }
 #body-topics {
   position: relative;
@@ -231,9 +328,9 @@ button {
   box-sizing: border-box;
   position: relative;
 }
-@media only screen and (min-width: 576px) {
+@media only screen and (min-width: 576px) and (max-width: 991px) {
   #body-topics .topic-container {
-    padding-left: 200px;
+    padding-left: 224px;
     padding-right: 5%;
   }
 }
@@ -241,10 +338,15 @@ button {
   padding-right: 12px;
   position: absolute;
   top: 40px;
-  right: 25%;
+  left: 56px;
   background: #f49f0a;
   text-align: right;
   transform: skewX(-30deg);
+}
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+  #body-topics .topic-container .section-header {
+    left: 240px;
+  }
 }
 #body-topics .topic-container .section-header h2 {
   margin: 0;
@@ -266,6 +368,11 @@ button {
   left: 0;
   background: #f49f0a;
 }
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+  #body-topics .topic-container .page-line {
+    width: 220px;
+  }
+}
 #body-topics .topic-container p {
   font-size: 1.25rem;
   margin: 0;
@@ -275,14 +382,14 @@ button {
   font-size: 2.25rem;
 }
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1400px) {
   #goalsSkills-container.topic-container .goals-skills-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
   }
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1400px) {
   #goalsSkills-container.topic-container .goals-skills-container .goals-bubbles-container {
     width: 48%;
     display: flex;
@@ -300,7 +407,7 @@ button {
   margin: 0 0 8px 0;
   font-size: 1.5rem;
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 1400px) {
   #goalsSkills-container.topic-container .goals-skills-container .skills-container {
     width: 50%;
   }
@@ -309,6 +416,7 @@ button {
   width: 100%;
   max-width: 340px;
   max-height: 100%;
+  margin-top: 8px;
   vertical-align: bottom;
   border-radius: 10px;
 }
@@ -375,11 +483,6 @@ button {
   display: flex;
   flex-direction: column;
 }
-#caseStudies-container.topic-container .page-line {
-  position: relative;
-  top: 9%;
-  left: -40px;
-}
 #caseStudies-container.topic-container .caseStudies-thumbnail-container {
   width: 100%;
   flex-grow: 1;
@@ -412,10 +515,9 @@ button {
   background: black;
   text-align: right;
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   #caseStudies-container.topic-container .caseStudies-thumbnail-container .case-study-thumbnail .header-container {
-    right: auto;
-    left: -67.5%;
+    right: 40%;
   }
 }
 #caseStudies-container.topic-container .caseStudies-thumbnail-container .case-study-thumbnail .header-container h3 {
@@ -557,42 +659,62 @@ button {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  #about-container {
+    padding: 80px 15%;
+  }
+}
+#about-container a {
+  text-decoration: none;
 }
 #about-container .header-container {
   width: 100%;
-  flex-grow: 0;
   text-align: center;
 }
 #about-container .header-container h3 {
   margin: 0 0 12px 0;
   font-size: 2rem;
+  color: black;
 }
 #about-container .about-entry-container {
   width: 100%;
-  flex-grow: 1;
 }
 #about-container .about-entry-container #about-image {
   width: 40%;
   height: 40%;
   margin: 0 8px 8px 0;
   float: left;
-  background: url(media/Headshot001.png);
   background-size: cover;
-  background-position: right;
+  background-position: center;
   background-repeat: no-repeat;
+}
+@media only screen and (min-width: 576px) {
+  #about-container .about-entry-container #about-image {
+    width: 240px;
+    height: 320px;
+    margin-right: 20px;
+  }
 }
 #about-container .about-entry-container #about-entry p:first-of-type {
   margin-top: 0;
 }
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 576px) {
   #about-container .about-entry-container #about-entry p {
     margin: 0;
+    font-size: 1.2rem;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #about-container .about-entry-container #about-entry p {
     font-size: 1.5rem;
   }
 }
 
 #elsewhere-container {
   width: 100%;
+  min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
@@ -601,6 +723,7 @@ button {
 @media only screen and (min-width: 992px) {
   #elsewhere-container {
     height: 50vh;
+    min-height: 0;
     display: flex;
     flex-direction: row;
   }
@@ -690,6 +813,12 @@ button {
 #elsewhere-container #contact-form-container form fieldset input:first-of-type {
   margin-bottom: 8px;
 }
+@media only screen and (min-width: 992px) {
+  #elsewhere-container #contact-form-container form fieldset input:first-of-type {
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+}
 #elsewhere-container #contact-form-container form textarea {
   flex-grow: 1;
   padding: 12px;
@@ -766,59 +895,58 @@ footer .legal {
   text-align: center;
 }
 
-body.reading-page header,
-body.archive-page header {
+body.single header,
+body.archive header {
   width: 100%;
   background: black;
 }
-body.reading-page header .header-container,
-body.archive-page header .header-container {
+body.single header .header-container,
+body.archive header .header-container {
   max-width: 800px;
   padding: 12px;
   margin: auto;
 }
-body.reading-page header .header-container a,
-body.archive-page header .header-container a {
+body.single header .header-container a,
+body.archive header .header-container a {
   text-decoration: none;
   color: #f49f0a;
 }
-body.reading-page header .header-container a .h1,
-body.archive-page header .header-container a .h1 {
+body.single header .header-container a .h1,
+body.archive header .header-container a .h1 {
   margin: 12px;
   color: #f49f0a;
 }
 
-body.reading-page header {
+body.single header {
   width: 100%;
   background: black;
 }
-body.reading-page header .header-container {
+body.single header .header-container {
   max-width: 800px;
   padding: 12px;
   margin: auto;
 }
-body.reading-page header .header-container a {
+body.single header .header-container a {
   text-decoration: none;
   color: #f49f0a;
 }
-body.reading-page header .header-container a .h1 {
+body.single header .header-container a .h1 {
   margin: 12px;
   color: #f49f0a;
 }
-body.reading-page article.main-reading {
+body.single article.main-reading {
   margin-bottom: 80px;
   position: relative;
 }
-body.reading-page article.main-reading .entry-header {
+body.single article.main-reading .entry-header {
   width: 100%;
   height: 27.5vh;
   position: relative;
-  background: url(../Assets/images/photo-of-black-motorcycle-parked-on-pavement-2396109-Photo-by-Sourav-Mishra-from-Pexels.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-body.reading-page article.main-reading .entry-header .entry-title {
+body.single article.main-reading .entry-header .entry-title {
   width: 100%;
   box-sizing: border-box;
   padding-left: 30%;
@@ -829,83 +957,83 @@ body.reading-page article.main-reading .entry-header .entry-title {
   color: white;
   transform: skewX(-30deg);
 }
-body.reading-page article.main-reading .entry-header .entry-title h2 {
+body.single article.main-reading .entry-header .entry-title h2 {
   margin: 8px;
   transform: skewX(30deg);
 }
-body.reading-page article.main-reading .entry {
+body.single article.main-reading .entry {
   margin: 2%;
 }
 @media only screen and (min-width: 992px) {
-  body.reading-page article.main-reading .entry {
+  body.single article.main-reading .entry {
     max-width: 800px;
     margin: auto;
   }
 }
-body.reading-page article.main-reading .entry figure {
+body.single article.main-reading .entry figure {
   margin: 0;
   text-align: center;
 }
-body.reading-page article.main-reading .entry figure a {
+body.single article.main-reading .entry figure a {
   display: inline-block;
   height: 60vh;
   box-shadow: 10px 10px 10px grey;
 }
-body.archive-page #archive-thumbnails {
+body.archive #archive-thumbnails {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(12, 1fr);
 }
 @media only screen and (min-width: 576px) {
-  body.archive-page #archive-thumbnails {
+  body.archive #archive-thumbnails {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(8, 1fr);
   }
 }
 @media only screen and (min-width: 768px) {
-  body.archive-page #archive-thumbnails {
+  body.archive #archive-thumbnails {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
   }
 }
 @media only screen and (min-width: 1200px) {
-  body.archive-page #archive-thumbnails {
+  body.archive #archive-thumbnails {
     grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(4, 1fr);
   }
 }
-body.archive-page #archive-thumbnails:before {
+body.archive #archive-thumbnails:before {
   content: "";
   padding-bottom: 100%;
   grid-column: 1/2;
   grid-row: 1/2;
 }
-body.archive-page #archive-thumbnails .archive-entry {
+body.archive #archive-thumbnails .archive-entry {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
 }
-body.archive-page #archive-thumbnails .archive-entry a {
+body.archive #archive-thumbnails .archive-entry a {
   width: 100%;
   height: 100%;
 }
-body.archive-page #archive-thumbnails .archive-entry .archive-header {
+body.archive #archive-thumbnails .archive-entry .archive-header {
   height: 100%;
   position: relative;
 }
-body.archive-page #archive-thumbnails .archive-entry .archive-header .archive-title {
+body.archive #archive-thumbnails .archive-entry .archive-header .archive-title {
   position: absolute;
   right: 32.5%;
   bottom: 12px;
   background: black;
   color: white;
 }
-body.archive-page #archive-thumbnails .archive-entry .archive-header .archive-title h3 {
+body.archive #archive-thumbnails .archive-entry .archive-header .archive-title h3 {
   margin: 4px;
   display: inline;
 }
-body.archive-page #archive-thumbnails .archive-entry .archive-header .archive-title:after {
+body.archive #archive-thumbnails .archive-entry .archive-header .archive-title:after {
   content: "";
   width: 0;
   height: 100%;
@@ -913,21 +1041,21 @@ body.archive-page #archive-thumbnails .archive-entry .archive-header .archive-ti
   border-top: 4px solid black;
   border-right: none;
 }
-body.archive-page #archive-thumbnails .archive-entry .archive-header .archive-excerpt {
+body.archive #archive-thumbnails .archive-entry .archive-header .archive-excerpt {
   display: none;
 }
-body.archive-page #archive-thumbnails div.archive-entry:nth-of-type(1) {
+body.archive #archive-thumbnails div.archive-entry:nth-of-type(1) {
   grid-column: 1/2;
   grid-row: 1/2;
 }
-body.archive-page .pagination-container {
+body.archive .pagination-container {
   margin: 40px 20%;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
 }
-body.archive-page .pagination-container .pages-symbol {
+body.archive .pagination-container .pages-symbol {
   flex: 0 0 auto;
   margin: 0 40px;
   height: 60px;
@@ -935,7 +1063,7 @@ body.archive-page .pagination-container .pages-symbol {
   background: #f49f0a;
   border-radius: 30px;
 }
-body.archive-page .pagination-container button {
+body.archive .pagination-container button {
   width: 8rem;
 }
 
