@@ -7,12 +7,14 @@ get_header('frontpage');
     <div id="head-img" style="background-image: url(<?= esc_url(get_theme_mod('waptheme_options-hero_image')); ?>);">
         <div id="head-name">
             <div class="name-box">
-                <h1><?= get_theme_mod('waptheme_options-first_name'); ?></h1>
-                <div class="name-backimage"></div>
+                <div class="name-backimage">
+                    <h1><?= get_theme_mod('waptheme_options-first_name'); ?></h1>
+                </div>
             </div>
             <div class="name-box">
-                <h1><?= get_theme_mod('waptheme_options-last_name'); ?></h1>
-                <div class="name-backimage"></div>
+                <div class="name-backimage">
+                    <h1><?= get_theme_mod('waptheme_options-last_name'); ?></h1>
+                </div>
             </div>
         </div>
         <div id="navigation-header">
@@ -117,8 +119,8 @@ get_header('frontpage');
                     </div>
                 </div>
             </div>
-            <div class="resume-link-container">
-                <button class="resume-link" href="<?= get_theme_mod('waptheme_options-resume_pdf'); ?>"><?= get_theme_mod('waptheme_options-resume_link_text'); ?></button>
+            <div class="link-container resume-link-container">
+                <a class="button resume-link" href="<?= get_theme_mod('waptheme_options-resume_pdf'); ?>" target="_blank"><?= get_theme_mod('waptheme_options-resume_link_text'); ?></a>
             </div>
                 
                 
@@ -162,9 +164,8 @@ get_header('frontpage');
                 wp_reset_postdata();
             ?>
             </div>
-            <div class="archive-link-container">
-                <p><?= get_category_link( get_cat_ID('Case Study')); ?></p>
-                <a href="<?= get_category_link( get_cat_ID('Case Study')) ?>" class="archive-link"><?= get_theme_mod('waptheme_options-caseStudies_more'); ?></a>
+            <div class="link-container archive-link-container">
+                <a href="<?= get_category_link( get_cat_ID('Case Study')) ?>" class="button archive-link"><?= get_theme_mod('waptheme_options-caseStudies_more'); ?></a>
             </div>
 
 
@@ -222,8 +223,8 @@ get_header('frontpage');
                     wp_reset_postdata();
                 ?>
             </div>
-            <div class="archive-link-container">
-                <button class="archive-link"><?= get_theme_mod('waptheme_options-articles_more'); ?></button>
+            <div class="link-container archive-link-container">
+                <a class="button archive-link"><?= get_theme_mod('waptheme_options-articles_more'); ?></a>
             </div>      
         </div>
     </div>

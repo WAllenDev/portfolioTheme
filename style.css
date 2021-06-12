@@ -38,12 +38,14 @@ p {
   font-family: "Inconsolata", monospace;
 }
 
-button {
+button,
+.button {
   padding: 8px;
   border: none;
   border-radius: 2px;
   background: #f49f0a;
   color: white;
+  text-decoration: none;
 }
 
 #scrolling-topics {
@@ -75,41 +77,17 @@ button {
 }
 #head-img #head-name {
   width: 100%;
-  height: 200px;
-  position: relative;
-}
-#head-img #head-name .name-box {
-  height: 6rem;
-  margin-left: 10%;
-  position: absolute;
 }
 #head-img #head-name .name-box h1 {
   margin: 0;
-  font-size: 6rem;
+  font-size: 4rem;
   z-index: 10;
-  position: relative;
   text-align: center;
+  transform: skewX(30deg);
 }
 #head-img #head-name .name-box .name-backimage {
-  width: 180px;
-  height: 6rem;
-  margin: 0;
-  position: absolute;
-  top: 20px;
   transform: skewX(-30deg);
   background: #f49f0a;
-}
-#head-img #head-name .name-box:nth-of-type(2) {
-  bottom: 0;
-  right: 0;
-  margin-left: 0;
-  margin-right: 15%;
-}
-#head-img #head-name .name-box:nth-of-type(2) .name-backimage {
-  width: 240px;
-}
-#head-img #head-name .name-box:last-of-type {
-  align-self: flex-end;
 }
 
 #navigation-header {
@@ -226,9 +204,15 @@ button {
 #navigation-sticky nav {
   width: 1200px;
   position: absolute;
-  bottom: 10%;
-  right: 0;
+  bottom: 0;
+  left: -1160px;
   transition: right 1s ease-out;
+}
+@media only screen and (min-width: 400px) {
+  #navigation-sticky nav {
+    left: -1100px;
+    padding-bottom: 10%;
+  }
 }
 @media only screen and (min-width: 576px) {
   #navigation-sticky nav.nav-scrolling li {
@@ -243,6 +227,7 @@ button {
   position: relative;
   padding: 0;
   margin: 0;
+  right: 0;
 }
 #navigation-sticky li {
   width: 100%;
@@ -260,9 +245,25 @@ button {
   text-decoration: none;
 }
 #navigation-sticky li h2 {
+  font-size: 1.125rem;
   color: black;
   transform: skewX(30deg);
   margin: 10px 0;
+}
+@media only screen and (min-width: 400px) {
+  #navigation-sticky li h2 {
+    font-size: 1.3rem;
+  }
+}
+@media only screen and (min-width: 576px) {
+  #navigation-sticky li h2 {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #navigation-sticky li h2 {
+    font-size: 1.75rem;
+  }
 }
 #navigation-sticky li:nth-of-type(1) {
   right: -200px;
@@ -654,7 +655,7 @@ button {
 
 #about-container {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 80px 40px;
   box-sizing: border-box;
   display: flex;
@@ -683,7 +684,7 @@ button {
 }
 #about-container .about-entry-container #about-image {
   width: 40%;
-  height: 40%;
+  height: 30vh;
   margin: 0 8px 8px 0;
   float: left;
   background-size: cover;
@@ -697,12 +698,14 @@ button {
     margin-right: 20px;
   }
 }
+#about-container .about-entry-container #about-entry p {
+  margin-bottom: 4px;
+}
 #about-container .about-entry-container #about-entry p:first-of-type {
   margin-top: 0;
 }
 @media only screen and (min-width: 576px) {
   #about-container .about-entry-container #about-entry p {
-    margin: 0;
     font-size: 1.2rem;
   }
 }

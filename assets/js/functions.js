@@ -6,6 +6,13 @@ function ready(callbackFunction){
     }
 }
 ready(e => {
+
+    //  Remove WP's lost p elements
+    let emptyP = document.querySelectorAll("p:empty");
+    emptyP.forEach( elem =>
+        elem.parentNode.removeChild(elem)
+    );
+
     let nav = document.getElementById("navigation-sticky").getElementsByTagName("nav")[0];
     let scrollingElement = document.getElementsByTagName('body')[0];
 
