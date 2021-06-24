@@ -48,7 +48,9 @@ get_header('frontpage');
         <div id="introduction-container" class="topic-container">
             <a href="#main">
                 <div class="section-header">
-                    <h2><?= get_theme_mod('waptheme_options-intro_title'); ?></h2>
+                    <div class="header-box">
+                        <h2><?= get_theme_mod('waptheme_options-intro_title'); ?></h2>
+                    </div>
                 </div>
             </a>
             <div class="page-line"></div>
@@ -57,7 +59,9 @@ get_header('frontpage');
         <div id="goalsSkills-container" class="topic-container">
             <a href="#main">
                 <div class="section-header">
-                    <h2><?= get_theme_mod('waptheme_options-goals_title'); ?></h2>
+                    <div class="header-box">
+                        <h2><?= get_theme_mod('waptheme_options-goals_title'); ?></h2>
+                    </div>
                 </div>
             </a>
             <div class="page-line"></div>
@@ -85,7 +89,9 @@ get_header('frontpage');
         <div id="resume-container" class="topic-container">
             <a href="#main">
                 <div class="section-header">
-                    <h2><?= get_theme_mod('waptheme_options-resume_title'); ?></h2>
+                    <div class="header-box">
+                        <h2><?= get_theme_mod('waptheme_options-resume_title'); ?></h2>
+                    </div>
                 </div>
             </a>
             <div class="page-line"></div>
@@ -128,7 +134,9 @@ get_header('frontpage');
         <div id="caseStudies-container" class="topic-container">
             <a href="#main">
                 <div class="section-header">
-                    <h2><?= get_theme_mod('waptheme_options-caseStudies_title'); ?></h2>
+                    <div class="header-box">
+                        <h2><?= get_theme_mod('waptheme_options-caseStudies_title'); ?></h2>
+                    </div>
                 </div>
             </a>
             <div class="page-line"></div>
@@ -173,7 +181,9 @@ get_header('frontpage');
         <div id="articles-container" class="topic-container">
             <a href="#main">
                 <div class="section-header">
-                    <h2><?= get_theme_mod('waptheme_options-articles_title'); ?></h2>
+                    <div class="header-box">
+                        <h2><?= get_theme_mod('waptheme_options-articles_title'); ?></h2>
+                    </div>
                 </div>
             </a>
             <div class="page-line"></div>
@@ -283,13 +293,14 @@ get_header('frontpage');
         <div class="social-link"></div>
     </div>
     <div id="contact-form-container">
-        <form>
+        <form action="<?= esc_url( admin_url('admin-post.php')); ?>" method="post">
             <fieldset>
-                <input id="name" value="<?= get_theme_mod('waptheme_options-contact_name'); ?>">
-                <input id="email" value="<?= get_theme_mod('waptheme_options-contact_email', true); ?>">
+                <input name ="name" id="name" value="<?= get_theme_mod('waptheme_options-contact_name'); ?>">
+                <input name = "email" id="email" value="<?= get_theme_mod('waptheme_options-contact_email', true); ?>">
             </fieldset>
-            <textarea id="message" name="message"><?= get_theme_mod('waptheme_options-contact_message'); ?></textarea>
-            <button type="button"><?= get_theme_mod('waptheme_options-contact_submit'); ?></button>
+            <textarea name="message" id="message" name="message"><?= get_theme_mod('waptheme_options-contact_message'); ?></textarea>
+            <input type="hidden" name="action" value="contact_form">
+            <input class="button" type="submit" value="<?= get_theme_mod('waptheme_options-contact_submit'); ?>">
         </form>
     </div>  
 </div>
