@@ -13,6 +13,9 @@ ready(e => {
         elem.parentNode.removeChild(elem)
     );
 
+
+
+    //  Track scrolling to update css class of nav
     let nav = document.getElementById("navigation-sticky").getElementsByTagName("nav")[0];
     let scrollingElement = document.getElementsByTagName('body')[0];
 
@@ -22,6 +25,8 @@ ready(e => {
         } else {
             nav.setAttribute('class','nav-top');
         }
+
+        console.log(scrollingElement.scrollTop);
     }
     scrollingElement.addEventListener('scroll', navLocation);
 })

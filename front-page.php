@@ -293,15 +293,7 @@ get_header('frontpage');
         <div class="social-link"></div>
     </div>
     <div id="contact-form-container">
-        <form action="<?= esc_url( admin_url('admin-post.php')); ?>" method="post">
-            <fieldset>
-                <input name ="name" id="name" value="<?= get_theme_mod('waptheme_options-contact_name'); ?>">
-                <input name = "email" id="email" value="<?= get_theme_mod('waptheme_options-contact_email', true); ?>">
-            </fieldset>
-            <textarea name="message" id="message" name="message"><?= get_theme_mod('waptheme_options-contact_message'); ?></textarea>
-            <input type="hidden" name="action" value="contact_form">
-            <input class="button" type="submit" value="<?= get_theme_mod('waptheme_options-contact_submit'); ?>">
-        </form>
+        <?= do_shortcode("[ninja_form id=1]"); ?>
     </div>  
 </div>
 

@@ -932,6 +932,7 @@ button,
 
 #elsewhere-container {
     width: 100%;
+    height: 100vh;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr;
@@ -995,73 +996,48 @@ button,
     #contact-form-container {
         grid-area: form;
         background: $orange;
-
+        padding: 40px 5%;
         @media only screen and (min-width: 992px){
             width: 50%;
             padding: 80px 10% 80px 5%;
             box-sizing: border-box;
         }
-
         form {
-            height: 100%;
-            padding: 3%;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
-            
-            fieldset {
-                width: 100%;
+            input {
                 box-sizing: border-box;
-                flex-grow: 0;
-                padding: 0;
-                margin: 0;
                 border: none;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-
-                @media only screen and (min-width: 992px) {
-                    flex-direction: row;
-                }
-
-                input {
-                    width: 100%;
-                    padding: 4px;
-                    box-sizing: border-box;
-                    margin: 0;
-                    border: none;
-                    border-radius: 2px;
-                    font-size: 1.3rem;
-                    font-family: $headerFont;
-
-                    &:first-of-type {
-                        margin-bottom: 8px;
-
-                        @media only screen and (min-width: 992px) {
-                            margin-bottom: 0;
-                            margin-right: 8px;
-                        }
-                    }
-                }
-
+                border-radius: 2px;
+                font-size: 1.3rem;
+                font-family: $headerFont;
             }
 
             textarea {
                 flex-grow: 1;
-                padding: 12px;
-                margin: 12px 0;
                 border: none;
                 border-radius: 2px;
                 font-size: 1.1rem;
                 font-family: $paragraphFont;
             }
 
-            .button {
+            input[type=button] {
                 background: white;
                 color: $orange;
                 flex-grow: 0;
                 margin: auto;
             }
+        }
+
+        //  Ninja Forms fixes
+        .nf-form-hp {
+            position: relative;
+        }
+
+        .nf-form-fields-required,
+        .ninja-forms-req-symbol {
+            display: none;
         }
     }
 
@@ -1075,29 +1051,37 @@ footer {
     padding-bottom: 80px;
     background: black;
 
-    #instagram-feed {
-        display: grid;
-        width: 100%;
-        grid-template-columns: repeat(2, 50%);
-        grid-template-rows: repeat(4, 25%);
-        margin-bottom: 80px;
+    #instagram-feed #sb_instagram {
 
-        @media only screen and (min-width: 576px) {
-            grid-template-columns: repeat(4, 25%);
-            grid-template-rows: repeat(2, 50%);
+        .sb_instagram_header,
+        #sbi_load {
+            display: none;
         }
-
-        @media only screen and (min-width: 992px) {
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: 1fr;
-        }
-
-        .feed-image {
+    
+        #sbi_images {
+            display: grid;
             width: 100%;
+            grid-template-columns: repeat(2, 50%);
+            grid-template-rows: repeat(4, 25%);
+            margin-bottom: 80px;
 
-            img {
+            @media only screen and (min-width: 576px) {
+                grid-template-columns: repeat(4, 25%);
+                grid-template-rows: repeat(2, 50%);
+            }
+
+            @media only screen and (min-width: 992px) {
+                grid-template-columns: repeat(8, 1fr);
+                grid-template-rows: 1fr;
+            }
+
+            .feed-image {
                 width: 100%;
-                display: block;
+
+                img {
+                    width: 100%;
+                    display: block;
+                }
             }
         }
     }
